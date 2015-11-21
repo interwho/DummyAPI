@@ -29,7 +29,7 @@ class PageController extends Controller
         return $this->createResponse('pong', Response::HTTP_OK);
     }
 
-    public function loginGet()
+    public function logoutGet()
     {
         return $this->createResponse('pong', Response::HTTP_OK);
     }

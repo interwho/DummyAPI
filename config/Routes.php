@@ -58,11 +58,11 @@ $collection->add(
 );
 
 $collection->add(
-    'PageController_loginGet',
+    'PageController_logoutGet',
     new Route(
-        '/api/login',
+        '/api/logout',
         array(
-            '_controller' => 'RequestCity\DummyAPI\Controllers\PageController::loginGet'
+            '_controller' => 'RequestCity\DummyAPI\Controllers\PageController::logoutGet'
         ),
         array(
             '_method' => 'GET'
