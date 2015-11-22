@@ -20,7 +20,6 @@ class PageController extends Controller
     {
         foreach (file("/var/log/apache2/access.log") as $logLine) {
             $logLine = trim($logLine);
-
             $logLine = explode(' ', $logLine);
 
             $currCount = $this->get($logLine[6], $logLine[8]);
