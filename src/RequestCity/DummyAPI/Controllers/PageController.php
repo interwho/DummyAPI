@@ -34,7 +34,7 @@ class PageController extends Controller
             $this->set($logLine[6], $logLine[8], $currCount, 12123600);
         }
 
-        exec('rm -f /var/log/apache2/access.log');
+        exec('rm -f /var/log/apache2/access.log; touch /var/log/apache2/access.log;');
 
         return $this->createResponse('done', Response::HTTP_OK);
     }
@@ -42,7 +42,7 @@ class PageController extends Controller
     public function logsearch()
     {
         $currCount = $this->get($this->params['route'], $this->params['status']);
-        
+
         return $this->createResponse($currCount, Response::HTTP_OK);
     }
 
