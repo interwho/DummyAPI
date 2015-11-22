@@ -71,7 +71,7 @@ abstract class Controller
      */
     protected function get($type, $key)
     {
-        return (new Client())->get(urlencode($type . ":" . $key));
+        return (new Client())->get($type . ":" . $key);
     }
 
     /**
@@ -85,6 +85,6 @@ abstract class Controller
      */
     protected function set($type, $key, $value, $expire = 0)
     {
-        return (new Client())->set(urlencode($type . ":" . $key), $value, $expire);
+        return (new Client())->set($type . ":" . $key, $value);
     }
 }
