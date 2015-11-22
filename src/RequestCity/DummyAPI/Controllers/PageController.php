@@ -1,6 +1,7 @@
 <?php
 namespace RequestCity\DummyAPI\Controllers;
 
+use Predis\Client;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -43,6 +44,13 @@ class PageController extends Controller
         $currCount = $this->get($this->params['route'], $this->params['status']);
 
         return $this->createResponse($currCount, Response::HTTP_OK);
+    }
+
+    public function clear()
+    {
+        (new Client())->flushdb();
+
+        return $this->createResponse('done', Response::HTTP_OK);
     }
 
     // Dummy Routes

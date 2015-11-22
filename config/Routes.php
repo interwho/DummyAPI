@@ -44,6 +44,19 @@ $collection->add(
     )
 );
 
+$collection->add(
+    'PageController_clear',
+    new Route(
+        '/frontend/clear',
+        array(
+            '_controller' => 'RequestCity\DummyAPI\Controllers\PageController::clear'
+        ),
+        array(
+            '_method' => 'GET'
+        )
+    )
+);
+
 // API
 $collection->add(
     'PageController_usersGet',
