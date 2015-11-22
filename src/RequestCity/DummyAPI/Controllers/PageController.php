@@ -49,21 +49,112 @@ class PageController extends Controller
 
     public function usersGet()
     {
-        return $this->createResponse('pong', Response::HTTP_OK);
+        $responses = [
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_INTERNAL_SERVER_ERROR
+        ];
+
+        shuffle($responses);
+
+        return $this->createResponse('pong', array_shift($responses));
     }
 
     public function authenticationGet()
     {
-        return $this->createResponse('pong', Response::HTTP_INTERNAL_SERVER_ERROR);
+        $responses = [
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_INTERNAL_SERVER_ERROR,
+            Response::HTTP_INTERNAL_SERVER_ERROR,
+            Response::HTTP_INTERNAL_SERVER_ERROR,
+            Response::HTTP_INTERNAL_SERVER_ERROR,
+            Response::HTTP_INTERNAL_SERVER_ERROR
+        ];
+
+        shuffle($responses);
+
+        return $this->createResponse('pong', array_shift($responses));
     }
 
     public function postsGet()
     {
-        return $this->createResponse('pong', Response::HTTP_OK);
+        $responses = [
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_INTERNAL_SERVER_ERROR,
+            Response::HTTP_INTERNAL_SERVER_ERROR
+        ];
+
+        shuffle($responses);
+
+        return $this->createResponse('pong', array_shift($responses));
     }
 
     public function logoutGet()
     {
-        return $this->createResponse('pong', Response::HTTP_OK);
+        $responses = [
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_OK,
+            Response::HTTP_INTERNAL_SERVER_ERROR
+        ];
+
+        shuffle($responses);
+
+        return $this->createResponse('pong', array_shift($responses));
     }
 }

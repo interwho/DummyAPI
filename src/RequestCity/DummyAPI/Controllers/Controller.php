@@ -80,10 +80,9 @@ abstract class Controller
      * @param     $type
      * @param     $key
      * @param     $value
-     * @param int $expire
      * @return bool
      */
-    protected function set($type, $key, $value, $expire = 0)
+    protected function set($type, $key, $value)
     {
         return (new Client())->set($type . ":" . $key, $value);
     }
