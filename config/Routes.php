@@ -17,6 +17,33 @@ $collection->add(
     )
 );
 
+// Storage
+$collection->add(
+    'PageController_logrotate',
+    new Route(
+        '/frontend/logrotate',
+        array(
+            '_controller' => 'RequestCity\DummyAPI\Controllers\PageController::logrotate'
+        ),
+        array(
+            '_method' => 'GET'
+        )
+    )
+);
+
+$collection->add(
+    'PageController_logsearch',
+    new Route(
+        '/frontend/logsearch',
+        array(
+            '_controller' => 'RequestCity\DummyAPI\Controllers\PageController::logsearch'
+        ),
+        array(
+            '_method' => 'GET'
+        )
+    )
+);
+
 // API
 $collection->add(
     'PageController_usersGet',

@@ -1,7 +1,9 @@
 <?php
 namespace RequestCity\DummyAPI\Controllers;
 
+use Httpful\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Exception;
 
 /**
  * Class PageController
@@ -13,6 +15,20 @@ class PageController extends Controller
     {
         return $this->createResponse('pong', Response::HTTP_OK);
     }
+
+    //
+
+    public function logrotate()
+    {
+        return $this->createResponse('pong', Response::HTTP_OK);
+    }
+
+    public function logsearch()
+    {
+        return $this->createResponse('132', Response::HTTP_OK);
+    }
+
+    //
 
     public function usersGet()
     {

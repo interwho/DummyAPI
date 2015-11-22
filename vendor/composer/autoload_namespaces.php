@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'RequestCity\\DummyAPI' => array($baseDir . '/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
+    'Httpful' => array($vendorDir . '/nategood/httpful/src'),
 );
