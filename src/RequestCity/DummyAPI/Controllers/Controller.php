@@ -3,6 +3,7 @@ namespace RequestCity\DummyAPI\Controllers;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
+use RequestCity\DummyAPI\Cache;
 
 /**
  * Class Controller
@@ -59,5 +60,31 @@ abstract class Controller
             $response,
             array('content-type' => $type)
         );
+    }
+
+    /**
+     * Get data from the Redis Cache
+     *
+     * @param $type
+     * @param $key
+     * @return string
+     */
+    protected function get($type, $key)
+    {
+        return (new Cache())->get($type, $key);
+    }
+
+    /**
+     * Set data in the Redis Cache
+     *
+     * @param     $type
+     * @param     $key
+     * @param     $value
+     * @param int $expire
+     * @return bool
+     */
+    protected function set($type, $key, $value, $expire = 0)
+    {
+        return (new Cache())->set($type, $key, $value, $expire);
     }
 }

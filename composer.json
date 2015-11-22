@@ -30,6 +30,6 @@
         "symfony/http-kernel": "^2.7",
         "symfony/routing": "^2.7",
         "nette/utils": "^2.3",
-        "nategood/httpful": "*"
+        "doctrine/orm": "2.4.4"
     }
 }
