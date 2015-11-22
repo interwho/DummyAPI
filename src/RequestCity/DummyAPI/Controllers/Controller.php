@@ -1,9 +1,9 @@
 <?php
 namespace RequestCity\DummyAPI\Controllers;
 
+use Predis\Client;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
-use RequestCity\DummyAPI\Cache;
 
 /**
  * Class Controller
@@ -71,7 +71,7 @@ abstract class Controller
      */
     protected function get($type, $key)
     {
-        return (new Cache())->get($type, $key);
+        return (new Client())->get($type . ":" . $key);
     }
 
     /**
@@ -85,6 +85,6 @@ abstract class Controller
      */
     protected function set($type, $key, $value, $expire = 0)
     {
-        return (new Cache())->set($type, $key, $value, $expire);
+        return (new Client())->set($type . ":" . $key, $value, $expire);
     }
 }
