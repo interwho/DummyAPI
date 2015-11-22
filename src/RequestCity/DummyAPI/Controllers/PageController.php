@@ -34,7 +34,7 @@ class PageController extends Controller
             $this->set($logLine[6], $logLine[8], $currCount, 12123600);
         }
 
-        exec('rm -f /var/log/apache2/access.log; touch /var/log/apache2/access.log;');
+        exec('truncate -s 0 /var/log/apache2/access.log');
 
         return $this->createResponse('done', Response::HTTP_OK);
     }
